@@ -1,0 +1,10 @@
+/home/coding/workspace/PartyInvites/obj/Debug/netcoreapp2.0/PartyInvites.csproj.CoreCompileInputs.cache
+/home/coding/workspace/PartyInvites/obj/Debug/netcoreapp2.0/PartyInvites.AssemblyInfoInputs.cache
+/home/coding/workspace/PartyInvites/obj/Debug/netcoreapp2.0/PartyInvites.AssemblyInfo.cs
+/home/coding/workspace/PartyInvites/bin/Debug/netcoreapp2.0/PartyInvites.deps.json
+/home/coding/workspace/PartyInvites/bin/Debug/netcoreapp2.0/PartyInvites.runtimeconfig.json
+/home/coding/workspace/PartyInvites/bin/Debug/netcoreapp2.0/PartyInvites.runtimeconfig.dev.json
+/home/coding/workspace/PartyInvites/bin/Debug/netcoreapp2.0/PartyInvites.dll
+/home/coding/workspace/PartyInvites/bin/Debug/netcoreapp2.0/PartyInvites.pdb
+/home/coding/workspace/PartyInvites/obj/Debug/netcoreapp2.0/PartyInvites.dll
+/home/coding/workspace/PartyInvites/obj/Debug/netcoreapp2.0/PartyInvites.pdb
