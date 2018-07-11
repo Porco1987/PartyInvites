@@ -1,4 +1,6 @@
 ﻿@model PartyInvites.Models.GuestResponse
+@using MimeKit;
+@using MailKit.Net.Smtp;
  
 @{
 Layout = null;
@@ -17,19 +19,26 @@ Layout = null;
 <body>
 
 @{
-        try {
-            WebMail.SmtpServer = "smtp.qq.com";
-            WebMail.SmtpPort = 465;
-            WebMail.EnableSsl = true;
-            WebMail.UserName = "469655072@qq.com";
-            WebMail.Password = "lyxxnambcpqycacd";
-            WebMail.From = Model.Email;
+    try {
+        var message = new MimeMessage();
+        message.From.Add(new MailboxAddress("Lin", "linqiao1987@qq.com"));
+        message.To.Add(new MailboxAddress("You", Model.Email));
+        message.Subject = "Test RsvpForm";
+        message.Body = new TextPart("Test RsvpForm in .Net Core")
+        {
+            Text = Model.Name + " is " + ((Model.WillAttend ?? false) ? "" : "not")+ "attending"
+        };
+        using (var client = new SmtpClient())
+        {
+            client.Connect("smtp.qq.com", 465, true);
+            client.Authenticate("469655072@qq.com", "zxeevofqoqvybjii");
+            client.Send(message);
+            client.Disconnect(true);
 
-            WebMail.Send("linqiao1987@qq.com", "RSVP Notification",
-                Model.Name + " is " + ((Model.WillAttend ?? false) ? "" : "not")
-                    + "attending");
+        }
 
-        } catch (Exception) {
+
+    } catch (Exception) {
             @:<b>Sorry - we couldn't send the email to confirm your RSVP.</b>
         }
     }
